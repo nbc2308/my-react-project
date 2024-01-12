@@ -43,7 +43,7 @@ const RightMenu = () => {
         <a href='#' className='inline-block mt-12 mb-28                                                               px'>
           <FaAdjust />
         </a>
-        <div>
+        <div className='nav-menu'>
           <ul className='inline-grid gap-y-11'>
             {navMenuData.map(item => (
               <li key={(item.img)}>
