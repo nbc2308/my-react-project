@@ -38,8 +38,8 @@ const navMenuData = [
 
 const RightMenu = () => {
   return (
-    <div className="h-[1315px] w-[108px] float-end fixed top-0 right-0">
-      <div className='wrapper text-center'>
+    <div className="right-menu w-[108px] h-[1315px] float-end">
+      <div className='text-center'>
         <a href='#' className='inline-block mt-12 mb-28                                                               px'>
           <FaAdjust />
         </a>
