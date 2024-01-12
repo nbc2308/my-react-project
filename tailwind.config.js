@@ -11,7 +11,7 @@ export default {
       },
       colors: {
         bgColor: '#E4E6EB',
-        primaryColor: '#F0F0F6',
+        primaryColor: '#FFFFFF',
         secondaryColor: '#FFB400',
       },
     },
