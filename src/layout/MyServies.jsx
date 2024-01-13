@@ -49,7 +49,7 @@ const MyServies = () => {
             
             <p className='font-medium mt-10'>Advertising</p>
             <p className='font-light -mt-6 text-[15px] w-[260px] h-[78px] text-center'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. </p>
-            <a className='flex justify-center items-center text-[#FFB400] font-semibold text-[12px]'>ORDER NOW <MdKeyboardArrowRight /></a>
+            <a className='flex justify-center items-center text-[#FFB400] font-semibold text-[12px ]'>ORDER NOW <MdKeyboardArrowRight /></a>
         </div>
       </div>
     </div>
