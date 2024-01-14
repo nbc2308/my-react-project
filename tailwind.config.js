@@ -13,6 +13,7 @@ export default {
         bgColor: '#E4E6EB',
         primaryColor: '#FFFFFF',
         secondaryColor: '#FFB400',
+        textColor: '#767676',
       },
     },
   },

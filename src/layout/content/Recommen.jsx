@@ -3,21 +3,21 @@ const reviews = [
     {
         title: "Great Quality!",
         subtitle: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum",
-        avt: <img src='public/image/profile1.png'></img>,
+        avt: <img src='image/profile1.png'></img>,
         name: "James Gouse",
         work: "Graphic Design"
     },
     {
         title: "Amazing Work!",
         subtitle: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum",
-        avt: <img src='public/image/profile2.png'></img>,
+        avt: <img src='image/profile2.png'></img>,
         name: "Tiana Philips",
         work: "Photographer"
     },
     {
         title: "Great Quality!",
         subtitle: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum",
-        avt: <img src='public/image/profile3.png'></img>,
+        avt: <img src='image/profile3.png'></img>,
         name: "Talan Westervelt",
         work: "Business Man"
     },
@@ -45,11 +45,11 @@ const Recommen = () => {
                     <div className='w-[310px] h-[323px] bg-white'>
                         <div className='w-[262px] m-auto'>
                             <div className='inline-flex gap-3 mt-4 '>
-                                <img src='public/image/Shape.png'></img>
-                                <img src='public/image/Shape.png'></img>
-                                <img src='public/image/Shape.png'></img>
-                                <img src='public/image/Shape.png'></img>
-                                <img src='public/image/Shape.png'></img>
+                                <img src='image/Shape.png'></img>
+                                <img src='image/Shape.png'></img>
+                                <img src='image/Shape.png'></img>
+                                <img src='image/Shape.png'></img>
+                                <img src='image/Shape.png'></img>
                             </div>
                             <p className='text[18px] font-semibold my-3'>
                                 {item.title}

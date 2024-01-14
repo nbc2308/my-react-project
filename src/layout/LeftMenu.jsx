@@ -2,23 +2,23 @@ import React from 'react'
 
 const profileIcon = [
   {
-    img: <img src="/public/image/Icons-dribbble.png" alt="" />,
+    img: <img src="/image/Icons-dribbble.png" alt="" />,
     link: "#"
   },
   {
-    img: <img src="/public/image/Icons-Youtube.png" alt="" />,
+    img: <img src="/image/Icons-Youtube.png" alt="" />,
     link: "#"
   },
   {
-    img: <img src="/public/image/Icons-twitter.png" alt="" />,
+    img: <img src="/image/Icons-twitter.png" alt="" />,
     link: "#"
   },
   {
-    img: <img src="/public/image/Icons-instagram.png" alt="" />,
+    img: <img src="/image/Icons-instagram.png" alt="" />,
     link: "#"
   },
   {
-    img: <img src="/public/image/Icons-facebook.png" alt="" />,
+    img: <img src="/image/Icons-facebook.png" alt="" />,
     link: "#"
   },
 ]
