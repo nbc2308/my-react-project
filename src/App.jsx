@@ -23,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LayoutWebsite />}>
           <Route index element={<Show />} />
-          <Route path="product" element={<h2>ProductPage</h2>} />
+          <Route path="products" element={<h2>ProductPage</h2>} />
         </Route>
         <Route path="admin" element={<LayoutAdmin />}>
           <Route index element={<DashBoradPage />} />
