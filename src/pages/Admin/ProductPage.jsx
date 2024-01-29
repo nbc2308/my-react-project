@@ -1,18 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ProductPage = ({ products }) => {
+const ProductPage = ({ products, onRemove }) => {
   return (
     <>
-      <h2>Quản lí sản phẩm</h2>
+      <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 className="h2">Quản lí sản phẩm</h1>
+        <Link to="add" className="btn btn-sm btn-outline-primary">
+          Add product
+        </Link>
+      </div>
       <div className="table-responsive small">
         <table className="table table-striped table-sm">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Ảnh sản phẩm</th>
-              <th scope="col">Tên sản phẩm</th>
-              <th scope="col">Giá sản phẩm</th>
-              <th scope="col">Header</th>
+              <th scope="col">Product image</th>
+              <th scope="col">Product name</th>
+              <th scope="col">Product price</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -32,8 +38,13 @@ const ProductPage = ({ products }) => {
                 </td>
                 <td>
                   <div className="d-flex">
-                    <button className="btn btn-danger ">Del</button>
-                    <button className="btn btn-primary ml-3">Add</button>
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => onRemove(product.id)}
+                    >
+                      Delete
+                    </button>
+                    <button className="btn btn-primary ml-3">Update</button>
                   </div>
                 </td>
               </tr>

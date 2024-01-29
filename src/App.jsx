@@ -6,7 +6,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import DashBoradPage from "./components/DashBoradPage";
 import ProductPage from "./pages/Admin/ProductPage";
 import { useEffect, useState } from "react";
-import { getProducts } from "./api/product";
+import { addProduct, getProducts } from "./api/product";
+import AddProductForm from "./components/layouts/AddProductForm";
+import { ToastContainer, toast } from "react-toastify";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -17,6 +19,26 @@ function App() {
       setProducts(data);
     })();
   }, []);
+
+  const onHandleAdd = async (products) => {
+    try {
+      const data = await addProduct(products);
+      setProducts([...products, data]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const onHandleRemove = async (id) => {
+    try {
+      await removeProductsByid(id);
+      toast.success("Delete success");
+      //rerender
+      products.filter((products) => products.id !== id);
+    } catch (error) {
+      toast.error("Delete fail!");
+    }
+  };
 
   return (
     <>
@@ -29,10 +51,17 @@ function App() {
           <Route index element={<DashBoradPage />} />
           <Route
             path="products"
-            element={<ProductPage products={products} />}
+            element={
+              <ProductPage products={products} onRemove={onHandleRemove} />
+            }
+          />
+          <Route
+            path="products/add"
+            element={<AddProductForm onAdd={onHandleAdd} />}
           />
         </Route>
       </Routes>
+      <ToastContainer />
     </>
   );
 }
