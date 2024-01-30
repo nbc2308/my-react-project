@@ -6,9 +6,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import DashBoradPage from "./components/DashBoradPage";
 import ProductPage from "./pages/Admin/ProductPage";
 import { useEffect, useState } from "react";
-import { addProduct, getProducts } from "./api/product";
-import AddProductForm from "./components/layouts/AddProductForm";
+import {
+  addProduct,
+  getProducts,
+  removeProductsByid,
+  updateProduct,
+} from "./api/product";
+import AddProductForm from "./pages/Admin/product-add.jsx";
 import { ToastContainer, toast } from "react-toastify";
+import ProductEditPage from "./pages/Admin/product-update.jsx";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -20,23 +26,42 @@ function App() {
     })();
   }, []);
 
-  const onHandleAdd = async (products) => {
+  const onHandleAdd = async (product) => {
     try {
-      const data = await addProduct(products);
+      const data = await addProduct(product);
+      toast.success("Add success");
+      //rerender
       setProducts([...products, data]);
     } catch (error) {
-      console.log(error);
+      toast.error("Add fail!");
+    }
+  };
+
+  const onHandleUpdate = async (product) => {
+    try {
+      const data = await updateProduct(product);
+      toast.success("Edit success");
+      //rerender
+      setProducts(
+        products.map((item) => (item.id === product.id ? product : item))
+      );
+    } catch (error) {
+      toast.error("Edit fail!");
     }
   };
 
   const onHandleRemove = async (id) => {
-    try {
-      await removeProductsByid(id);
-      toast.success("Delete success");
-      //rerender
-      products.filter((products) => products.id !== id);
-    } catch (error) {
-      toast.error("Delete fail!");
+    const confirm = window.confirm("you sure?");
+    if (confirm) {
+      try {
+        console.log(id);
+        await removeProductsByid(id);
+        toast.success("Delete success");
+        //rerender
+        setProducts(products.filter((product) => product.id !== id));
+      } catch (error) {
+        toast.error("Delete fail!");
+      }
     }
   };
 
@@ -58,6 +83,10 @@ function App() {
           <Route
             path="products/add"
             element={<AddProductForm onAdd={onHandleAdd} />}
+          />
+          <Route
+            path="products/:id/edit"
+            element={<ProductEditPage onUpdate={onHandleUpdate} />}
           />
         </Route>
       </Routes>

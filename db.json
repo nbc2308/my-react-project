@@ -1,34 +1,16 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "iphone 13",
-      "image": "https://picsum.photos/300/300",
-      "price": 200
-    },
-    {
       "id": "2",
-      "name": "iphone 11",
+      "name": "iphone 14",
       "image": "https://picsum.photos/300/300",
       "price": 200
     },
     {
-      "id": "26bf",
-      "name": "bachinh",
-      "image": "https://picsum.photos/300/300",
+      "id": "d2a8",
+      "name": "iphone 13",
+      "image": "https://picsum.photos/200/200",
       "price": "200"
-    },
-    {
-      "id": "4b17",
-      "name": "cc",
-      "image": "https://picsum.photos/300/300",
-      "price": "4000"
-    },
-    {
-      "id": "b5a2",
-      "name": "bachinh456@gmail.com",
-      "image": "htttps://príum.photos/300/300",
-      "price": "55"
     }
   ]
 }

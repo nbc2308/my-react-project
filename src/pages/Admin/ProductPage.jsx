@@ -18,6 +18,7 @@ const ProductPage = ({ products, onRemove }) => {
               <th scope="col">Product image</th>
               <th scope="col">Product name</th>
               <th scope="col">Product price</th>
+              <th scope="col">Description</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -37,6 +38,9 @@ const ProductPage = ({ products, onRemove }) => {
                   <span>{product.price}</span>
                 </td>
                 <td>
+                  <span>{product.description}</span>
+                </td>
+                <td>
                   <div className="d-flex">
                     <button
                       className="btn btn-danger"
@@ -44,7 +48,12 @@ const ProductPage = ({ products, onRemove }) => {
                     >
                       Delete
                     </button>
-                    <button className="btn btn-primary ml-3">Update</button>
+                    <Link
+                      to={`/admin/products/${product.id}/edit`}
+                      className="btn btn-primary ml-3"
+                    >
+                      Update
+                    </Link>
                   </div>
                 </td>
               </tr>

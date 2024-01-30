@@ -1,22 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { getProductsByid } from "../../api/product";
 
-const AddProductForm = ({ onAdd }) => {
-  const { register, handleSubmit } = useForm();
+const ProductEditPage = ({ onUpdate }) => {
+  const { id } = useParams();
+  const { register, handleSubmit, reset } = useForm();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    (async () => {
+      const data = await getProductsByid(id);
+      reset(data);
+    })();
+  }, [id]);
+
   const onSubmit = (data) => {
-    onAdd(data);
+    onUpdate(data);
     navigate("/admin/products");
   };
   return (
     <>
       <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 className="h2">Add Product</h1>
+        <h1 className="h2">Update Product</h1>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
-          <label className="form-label">Product name</label>
+          <label htmlFor="ProductName" className="form-label">
+            Product name
+          </label>
           <input
             type="text"
             className="form-control"
@@ -25,7 +37,9 @@ const AddProductForm = ({ onAdd }) => {
           />
         </div>
         <div className="mb-3">
-          <label className="form-label">Image</label>
+          <label htmlFor="ProductImage" className="form-label">
+            Image
+          </label>
           <input
             type="text"
             className="form-control"
@@ -34,7 +48,9 @@ const AddProductForm = ({ onAdd }) => {
           />
         </div>
         <div className="mb-3">
-          <label className="form-label">Price</label>
+          <label htmlFor="ProductPrice" className="form-label">
+            Price
+          </label>
           <input
             type="Number"
             className="form-control"
@@ -44,21 +60,26 @@ const AddProductForm = ({ onAdd }) => {
         </div>
         <div className="mb-3">
           <label
-            id="ProductDes"
+            htmlFor="description"
             {...register("description")}
             className="form-label"
           >
             Description
           </label>
-          <textarea className="form-control" cols="30" rows="10"></textarea>
+          <textarea
+            id="description"
+            className="form-control"
+            cols="30"
+            rows="10"
+          ></textarea>
         </div>
 
         <button type="submit" className="btn btn-primary text-black">
-          Add
+          Save
         </button>
       </form>
     </>
   );
 };
 
-export default AddProductForm;
+export default ProductEditPage;
