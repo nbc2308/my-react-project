@@ -31,7 +31,7 @@ const AddProductForm = ({ onAdd }) => {
             Image
           </label>
           <input
-            type="text"
+            type="file"
             className="form-control"
             {...register("image")}
             id="ProductImage"

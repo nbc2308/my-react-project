@@ -15,6 +15,7 @@ import {
 import AddProductForm from "./pages/Admin/product-add.jsx";
 import { ToastContainer, toast } from "react-toastify";
 import ProductEditPage from "./pages/Admin/product-update.jsx";
+import ProductPageWebsite from "./pages/Client/productsPage.jsx";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -70,7 +71,10 @@ function App() {
       <Routes>
         <Route path="/" element={<LayoutWebsite />}>
           <Route index element={<Show />} />
-          <Route path="products" element={<h2>ProductPage</h2>} />
+          <Route
+            path="products"
+            element={<ProductPageWebsite products={products} />}
+          />
         </Route>
         <Route path="admin" element={<LayoutAdmin />}>
           <Route index element={<DashBoradPage />} />
