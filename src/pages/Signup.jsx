@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -5,8 +6,13 @@ import { useNavigate } from "react-router-dom";
 const Signup = () => {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
-  const onSubmit = (data) => {
-    onAdd(data);
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post(`http://localhost:3000/signup`, data);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
     navigate("/signin");
   };
   return (
