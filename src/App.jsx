@@ -16,6 +16,8 @@ import AddProductForm from "./pages/Admin/product-add.jsx";
 import { ToastContainer, toast } from "react-toastify";
 import ProductEditPage from "./pages/Admin/product-update.jsx";
 import ProductPageWebsite from "./pages/Client/productsPage.jsx";
+import ProfileEdit from "./pages/Admin/ProfileEdit.jsx";
+import Signup from "./pages/Signup.jsx";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -76,6 +78,8 @@ function App() {
             element={<ProductPageWebsite products={products} />}
           />
         </Route>
+        <Route path="signup" element={<Signup />} />
+
         <Route path="admin" element={<LayoutAdmin />}>
           <Route index element={<DashBoradPage />} />
           <Route
@@ -92,6 +96,7 @@ function App() {
             path="products/:id/edit"
             element={<ProductEditPage onUpdate={onHandleUpdate} />}
           />
+          <Route path="profile" element={<ProfileEdit />} />
         </Route>
       </Routes>
       <ToastContainer />

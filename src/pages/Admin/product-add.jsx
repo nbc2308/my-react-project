@@ -49,15 +49,12 @@ const AddProductForm = ({ onAdd }) => {
           />
         </div>
         <div className="mb-3">
-          <label
-            htmlFor="description"
-            {...register("description")}
-            className="form-label"
-          >
+          <label htmlFor="description" className="form-label">
             Description
           </label>
           <textarea
             id="description"
+            {...register("description")}
             className="form-control"
             cols="30"
             rows="10"

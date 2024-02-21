@@ -49,15 +49,15 @@ const Sidebar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <a
+                <Link
                   className="nav-link d-flex align-items-center gap-2"
-                  href="#"
+                  to="profile"
                 >
                   <svg className="bi">
                     <use xlinkHref="#people" />
                   </svg>
-                  Customers
-                </a>
+                  Profile
+                </Link>
               </li>
               <li className="nav-item">
                 <a
